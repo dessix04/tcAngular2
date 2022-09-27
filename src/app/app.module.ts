@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';// module qui fournit les modules essentielles et necessaires de angular
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';// fichier qui contient nos routes
+import { AppComponent } from './app.component';// fichier qui contient nos composants
 
 @NgModule({
   declarations: [
@@ -13,6 +13,10 @@ import { AppComponent } from './app.component';
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent] // page d'acceuil ou de demarrage ou composant racine
 })
 export class AppModule { }
+
+/*
+
+ app.module.ts est le module racine de tout le projet*/
