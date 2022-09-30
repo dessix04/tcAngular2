@@ -7,6 +7,7 @@ import { ARGONAUTE } from './argonaute/list-argonaute';
 })
 export class BaseDeDonneService implements InMemoryDbService {
   createDb() {
-    return { ARGONAUTE };
+    const argonautes = ARGONAUTE;
+    return { argonautes };
   }
 }

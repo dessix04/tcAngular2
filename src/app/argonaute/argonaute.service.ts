@@ -13,15 +13,17 @@ export class ArgonauteService {
 
   constructor(private http: HttpClient){}
 
+  // recuperation de la liste des argonautes
   RecupererListeArgonaute(): Observable<Argonaute[]> {
-    return this.http.get<Argonaute[]>('api/page-dacceuil').pipe(
+    return this.http.get<Argonaute[]>('api/argonautes').pipe(
       tap((response) => this.log(response)),
       catchError( (error) => this.recupCatchError(error, []))
     )
   }
 
+  // recupération de l'index d'un Argoanute
   RecupererIdArgonaute(idArgo: number): Observable<Argonaute|undefined>{
-    return this.http.get<Argonaute>(`api/argonaute/${idArgo}`).pipe(
+    return this.http.get<Argonaute>(`api/argonautes/${idArgo}`).pipe(
       tap((response) => this.log(response)),
       catchError( (error) => this.recupCatchError(error, undefined))
     )
@@ -33,12 +35,32 @@ export class ArgonauteService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json'})
     };
 
-    return this.http.put('api/listeArgonautes', argonaute, httOptions).pipe(
+    return this.http.put('api/argonautes', argonaute, httOptions).pipe(
       tap((respoonse) => this.log(respoonse)),
       catchError( (error) => this.recupCatchError(error, undefined))
     )
   }
 
+  // gestion de cas de suppression 
+  DeleteArgonauteById(idArgo: number): Observable<Argonaute|undefined>{
+    return this.http.delete(`api/argonautes/${idArgo}`).pipe(
+      tap((response) => this.log(response)),
+      catchError( (error) => this.recupCatchError(error, undefined))
+    )
+  }
+
+  // Ajout d'un nouveau membre ou d'un nouveau argonaute
+  toAddArgonaute(argonaute: Argonaute): Observable<Argonaute|undefined>{
+    const httOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json'})
+    };
+    return this.http.post<Argonaute|undefined>('api/argonautes', argonaute, httOptions).pipe(
+      tap((respoonse) => this.log(respoonse)),
+      catchError( (error) => this.recupCatchError(error, undefined))
+    )
+  }
+
+  // j'ai fait ces fonctions log, recuCatchError pour eviter la redondance et rendre le code plus lisible
   private log(response: any) {
     console.table(response);
   }

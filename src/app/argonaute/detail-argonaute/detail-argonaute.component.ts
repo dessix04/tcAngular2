@@ -23,16 +23,24 @@ export class DetailArgonauteComponent implements OnInit {
     
     if(IdArgono){
       this.argonauteService.RecupererIdArgonaute(+IdArgono)
-      .subscribe(argonaute =>this.argonaute =argonaute);
+      .subscribe((argonaute => this.argonaute = argonaute));
     } 
   }
 
+  // fonction pour rediriger vers la page d'acceuil
   returnPageDacceuil(){
       this.router.navigate(['/page-dacceuil']);
   }
 
+   // fonction pour rediriger vers la page de modification
   versPageEdit(argonaute: Argonaute){
     this.router.navigate(['/edit-page', argonaute.id])
+  }
+
+  // fonction pour supprimer un Argonaute puis diriger vers la page d'acceuil
+  supprimerArgonaute(argonaute: Argonaute){
+    this.argonauteService.DeleteArgonauteById(argonaute.id)
+    .subscribe(() => this.returnPageDacceuil());
   }
 
 }

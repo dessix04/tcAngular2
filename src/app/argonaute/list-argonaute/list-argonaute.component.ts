@@ -18,7 +18,7 @@ export class ListArgonauteComponent implements OnInit {
                 .subscribe(listesArgonautes => this.listesArgonautes = listesArgonautes)
               }
 
-  AfficherArgonaute( argonaute: Argonaute){
+  AfficherArgonaute(argonaute: Argonaute){
     this.router.navigate(['/argonaute', argonaute.id])
   }
 }
