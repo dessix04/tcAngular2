@@ -1,0 +1,25 @@
+<h2>
+    Détails de l'Argonaute
+</h2>
+<div class="member-item" *ngIf="argonaute" >
+    <p>
+        Nom : {{ argonaute.nom.toUpperCase()}}
+    </p>
+    <p>
+        Prenom : {{ argonaute.prenom.slice() }}
+    </p>
+    <p>
+        Est {{ argonaute.qualificatif }}
+    </p>
+    <p>
+        <button (click)="returnPageDacceuil()">retour</button>
+        <button (click)="versPageEdit(argonaute)">Modifier</button>
+    </p>
+</div>
+<div class="member-item" *ngIf="!argonaute" >
+    <h1>
+        error-page !
+      </h1>
+      <p> Vous avez entré un chemin érroné </p>
+      <a routerLink="/page-dacceuil"> Veuillez retourner à la page d'acceuil </a>
+</div>

@@ -1,0 +1,20 @@
+<!-- Member list -->
+<section class="member-list" id="troisieme">
+    <h2>Membres de l'équipage</h2>
+   <!-- {{ listesArgonautes[0].nom }} avec linterpolation -->
+    <div class="member-item" *ngFor="let membre of listesArgonautes" >
+        <p>
+            Nom : {{ membre.nom.toUpperCase()}}
+        </p>
+        <p>
+            Prenom : {{ membre.prenom.slice() }}
+        </p>
+        <p>
+            Est {{ membre.qualificatif }}
+        </p>
+        <p>
+            <button (click)="AfficherArgonaute(membre)">Voir Détails</button>
+        </p> 
+   </div>
+   
+  </section>

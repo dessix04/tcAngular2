@@ -43,14 +43,13 @@ label {
   text-align: center;
 }
 
-#scroll {
+#troisieme {
   overflow: scroll;
   overflow-y: none;
 }
 
 .member-list input {
   background-color: #efaeae;
-  border: none;
 }
 
 .member-item {
