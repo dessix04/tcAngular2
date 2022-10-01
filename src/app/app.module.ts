@@ -17,6 +17,7 @@ import { PageDAcceuilComponent } from './argonaute/page-d-acceuil/page-d-acceuil
 import { EditArgonauteComponent } from './argonaute/edit-argonaute/edit-argonaute.component';
 import { EditPageComponent } from './argonaute/edit-page/edit-page.component';
 import { AjoutNewArgonauteComponent } from './argonaute/ajout-new-argonaute/ajout-new-argonaute.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AjoutNewArgonauteComponent } from './argonaute/ajout-new-argonaute/ajou
     ErrorPageComponent,
     EditArgonauteComponent,
     EditPageComponent,
-    AjoutNewArgonauteComponent
+    AjoutNewArgonauteComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

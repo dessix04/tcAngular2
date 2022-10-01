@@ -1,0 +1,23 @@
+    <h2>Se connecter </h2>
+    <p style="display: flex; justify-content: center;">
+        {{alerteLogin}}
+    </p>
+    <form #FormConnexion="ngForm"
+    class="new-member-form" id="new-member-form">
+        <p>
+            <label for="name">Nom</label>
+            <input type="text" id="name" 
+            required
+            [(ngModel)]="name" name="name" />
+        </p>
+        <p>
+            <label for="mdp">Mot de passe</label>
+            <input id="mdp" type="password"
+            required
+            [(ngModel)]="pwd" name="pwd"  />
+        </p>
+        <button type="submit" name="submit" id="envoyer"
+        (click)="login()" *ngIf="!auth.connexion">Se Connecter</button>
+        <button type="submit" name="submit" id="envoyer"
+        (click)="deconnexion()" *ngIf="auth.connexion">Se Déconnecter</button>
+    </form>
