@@ -22,7 +22,7 @@ export class ArgonauteService {
   }
 
   // recupération de l'index d'un Argoanute
-  RecupererIdArgonaute(idArgo: number): Observable<Argonaute|undefined>{
+  RecupererIdArgonaute(idArgo: number): Observable<Argonaute>{
     return this.http.get<Argonaute>(`api/argonautes/${idArgo}`).pipe(
       tap((response) => this.log(response)),
       catchError( (error) => this.recupCatchError(error, undefined))

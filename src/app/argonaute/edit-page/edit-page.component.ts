@@ -6,7 +6,7 @@ import { ArgonauteService } from '../argonaute.service';
 @Component({
   selector: 'app-edit-page',
   template:`<!-- Modif member form -->
-    <h2>Modifier l'argonaute {{ argonaute?.nom }}</h2>
+    <h2>Modifier l'argonaute {{ argonaute.nom }}</h2>
     <form *ngIf="argonaute" (ngSubmit)="siEnvoiForm()" #editArgonauteForm="ngForm"
     class="new-member-form" id="new-member-form">
         <div class="form-groupe">
@@ -14,7 +14,6 @@ import { ArgonauteService } from '../argonaute.service';
             <input type="text" id="name" 
             required
             pattern="^[a-zA]{1,25}$"
-            placeholder="{{argonaute.nom}}"
             [(ngModel)]="argonaute.nom" name="name"
             #name="ngModel" />
             <p [hidden]="name.valid || name.pristine">
@@ -26,7 +25,6 @@ import { ArgonauteService } from '../argonaute.service';
             <input id="forname" type="text"
             required
             pattern="^[a-zA]{1,25}$"
-            placeholder="{{argonaute.prenom}}"
             [(ngModel)]="argonaute.prenom"
             name="forname"
             #forname="ngModel"  />
@@ -39,7 +37,6 @@ import { ArgonauteService } from '../argonaute.service';
             <input id="qualif" 
             type="text"
             required
-            placeholder="{{argonaute.qualificatif}}"
             [(ngModel)]="argonaute.qualificatif"
             name="qualif"
             #qualif="ngModel"/>
@@ -55,7 +52,7 @@ import { ArgonauteService } from '../argonaute.service';
   `,
 })
 export class EditPageComponent implements OnInit {
-  argonaute: Argonaute|undefined;
+  argonaute: Argonaute;
 
   constructor(
     private routerModifier: Router,
@@ -71,8 +68,7 @@ export class EditPageComponent implements OnInit {
     };
   }
   siEnvoiForm(){
-    if(this.argonaute)
     this.argonauteService.updateArgonaute(this.argonaute)
-    .subscribe(() => this.routerModifier.navigate(['/argonaute', this.argonaute?.id]))}
+    .subscribe(() => this.routerModifier.navigate(['/argonaute', this.argonaute.id]))}
     ;
 }
