@@ -8,7 +8,6 @@ export class Argonaute{
     qualificatif: string
 
     constructor(
-    id:  number = 0,
     nom: string = "Djibril",
     prenom: string = "BAH",
     qualificatif: string = "super curieux"
