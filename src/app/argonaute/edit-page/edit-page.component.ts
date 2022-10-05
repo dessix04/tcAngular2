@@ -13,24 +13,16 @@ import { ArgonauteService } from '../argonaute.service';
             <label for="name">Nom de l&apos;Argonaute</label>
             <input type="text" id="name" 
             required
-            pattern="^[a-zA]{1,25}$"
             [(ngModel)]="argonaute.nom" name="name"
             #name="ngModel" />
-            <p [hidden]="name.valid || name.pristine">
-                le nom de l'argonaute est requis ( 25 lettres max)
-            </p>
         </div>
         <div>
             <label for="forname">Prénom de l&apos;Argonaute</label>
             <input id="forname" type="text"
             required
-            pattern="^[a-zA]{1,25}$"
             [(ngModel)]="argonaute.prenom"
             name="forname"
             #forname="ngModel"  />
-            <p [hidden]="forname.valid || forname.pristine">
-                le prenom de l'argonaute est requis ( 25 lettres max)
-            </p>
         </div>
         <div>
             <label for="qualif">Qualificatif</label>
@@ -40,11 +32,8 @@ import { ArgonauteService } from '../argonaute.service';
             [(ngModel)]="argonaute.qualificatif"
             name="qualif"
             #qualif="ngModel"/>
-            <p [hidden]="qualif.valid || qualif.pristine">
-                le nom qualificatif est requis ( 25 lettres max)
-            </p>
         </div>
-        <button type="submit" name="submit" id="envoyer" [disabled]="editArgonauteForm.form.valid">Envoyer</button>
+        <button type="submit" name="submit" id="envoyer" [disabled]="editArgonauteForm.invalid">Envoyer</button>
 </form>
 <h3 *ngIf="!argonaute">
     Aucun Argonaute à éditer

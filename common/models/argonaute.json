@@ -1,0 +1,29 @@
+{
+  "name": "argonaute",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nom": {
+      "type": "string",
+      "required": true,
+      "default": "Djibril"
+    },
+    "prenom": {
+      "type": "string",
+      "required": true,
+      "default": "Bah"
+    },
+    "qualificatif": {
+      "type": "string",
+      "required": true,
+      "default": "super curieux"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

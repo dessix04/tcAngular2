@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+/*import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { ARGONAUTE } from './argonaute/list-argonaute';
 
@@ -11,3 +11,4 @@ export class BaseDeDonneService implements InMemoryDbService {
     return { argonautes };
   }
 }
+*/

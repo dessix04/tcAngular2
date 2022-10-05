@@ -14,24 +14,16 @@ import { ArgonauteService } from '../argonaute.service';
           <label for="name">Nom de l&apos;Argonaute</label>
           <input type="text" id="name" 
           required
-          pattern="^[a-zA]{1,25}$"
           [(ngModel)]="argonaute.nom" name="name"
           #name="ngModel" />
-          <span [hidden]="name.valid || name.pristine">
-              le nom de l'argonaute est requis ( 25 lettres max)
-        </span>
       </p>
       <p>
           <label for="forname">Prénom de l&apos;Argonaute</label>
           <input id="forname" type="text"
           required
-          pattern="^[a-zA]{1,25}$"
           [(ngModel)]="argonaute.prenom"
           name="forname"
           #forname="ngModel"  />
-          <span [hidden]="forname.valid || forname.pristine">
-              le prenom de l'argonaute est requis ( 25 lettres max)
-          </span>
       </p>
       <p>
           <label for="qualif">Qualificatif</label>
@@ -41,11 +33,8 @@ import { ArgonauteService } from '../argonaute.service';
           [(ngModel)]="argonaute.qualificatif"
           name="qualif"
           #qualif="ngModel"/>
-          <span [hidden]="qualif.valid || qualif.pristine">
-              le nom qualificatif est requis ( 25 lettres max)
-          </span>
       </p>
-      <button type="submit" name="submit" id="envoyer" [disabled]="editArgonauteForm.form.valid">Envoyer</button>
+      <button type="submit" name="submit" id="envoyer" [disabled]="editArgonauteForm.invalid">Envoyer</button>
 </form>
 </section>
 <h3 *ngIf="!argonaute">
@@ -62,7 +51,7 @@ export class AjoutNewArgonauteComponent implements OnInit {
   ){}
 
   ngOnInit() {
-    this.argonaute = new Argonaute();
+    this.argonaute =  new Argonaute();
   }
 
   siEnvoiForm(){

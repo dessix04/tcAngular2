@@ -1,31 +1,40 @@
 {
   "name": "tech-challenge-angular",
-  "version": "0.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development"
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "engines": {
+    "node": ">=6"
   },
-  "private": true,
+  "scripts": {
+    "lint": "eslint .",
+    "start": "node .",
+    "posttest": "npm run lint"
+  },
   "dependencies": {
-    "@angular/animations": "^14.2.0",
-    "@angular/common": "^14.2.0",
-    "@angular/compiler": "^14.2.0",
-    "@angular/core": "^14.2.0",
-    "@angular/forms": "^14.2.0",
-    "@angular/platform-browser": "^14.2.0",
-    "@angular/platform-browser-dynamic": "^14.2.0",
-    "@angular/router": "^14.2.0",
-    "rxjs": "~7.5.0",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.11.4"
+    "@angular/core": "^14.2.4",
+    "@angular/forms": "^14.2.4",
+    "@angular/platform-browser-dynamic": "^14.2.4",
+    "@angular/router": "^14.2.4",
+    "compression": "^1.0.3",
+    "cors": "^2.5.2",
+    "helmet": "^3.10.0",
+    "loopback": "^3.22.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^6.2.0",
+    "loopback-connector-mysql": "^6.1.0",
+    "rxjs": "^7.5.7",
+    "serve-favicon": "^2.0.1",
+    "strong-error-handler": "^4.0.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^14.2.3",
-    "@angular/cli": "~14.2.3",
-    "@angular/compiler-cli": "^14.2.0",
-    "angular-in-memory-web-api": "^0.14.0",
-    "typescript": "~4.7.2"
-  }
+    "@angular-devkit/build-angular": "^14.2.4",
+    "eslint": "^3.17.1",
+    "eslint-config-loopback": "^8.0.0"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "license": "UNLICENSED",
+  "description": "tech-challenge-angular"
 }

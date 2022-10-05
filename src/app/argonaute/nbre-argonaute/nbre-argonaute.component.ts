@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ARGONAUTE } from 'src/app/argonaute/list-argonaute';
+import { Argonaute } from '../argonaute';
+import { ArgonauteService } from '../argonaute.service';
+
 
 @Component({
   selector: 'app-nbre-argonaute',
@@ -9,12 +11,16 @@ import { ARGONAUTE } from 'src/app/argonaute/list-argonaute';
 })
 export class NbreArgonauteComponent implements OnInit {
 
-  listesArgonautes = ARGONAUTE;
-  index: number = this.listesArgonautes.length;
+ listesArgonautes: Argonaute[];
   
-  constructor() { }
+  constructor(private Nbreservice: ArgonauteService) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+   this.Nbreservice.NbreArgonaute()
+    .subscribe(listesArgonautes => this.listesArgonautes = listesArgonautes)
   }
-
+  index(){
+    this.Nbreservice.NbreArgonaute()
+    .subscribe(listesArgonautes => this.listesArgonautes = listesArgonautes)
+  }
 }

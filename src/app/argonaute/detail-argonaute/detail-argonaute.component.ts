@@ -5,7 +5,7 @@ import { ArgonauteService } from '../argonaute.service';
 
 @Component({
   selector: 'app-detail-argonaute',
-  templateUrl: './detail-argonaute.component.html',
+  templateUrl: './detail-argonaute.component.html'
 })
 export class DetailArgonauteComponent implements OnInit {
   listesArgonautes: Argonaute[];
@@ -23,7 +23,7 @@ export class DetailArgonauteComponent implements OnInit {
     
     if(IdArgono){
       this.argonauteService.RecupererIdArgonaute(+IdArgono)
-      .subscribe((argonaute => this.argonaute = argonaute));
+      .subscribe((argonaute:any) => this.argonaute = argonaute);
     } 
   }
 

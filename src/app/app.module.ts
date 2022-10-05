@@ -2,12 +2,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';// module qui fournit les modules essentielles et necessaires de angular
 import { HttpClientModule } from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { AppRoutingModule } from './app-routing.module';// fichier qui contient nos routes
 import { AppComponent } from './app.component';
 import { ArgoFormComponent } from './argo-form/argo-form.component';// fichier qui contient nos composants
-import { BaseDeDonneService } from './base-de-donne.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { ArgonauteModule } from './argonaute/argonaute.module';
 import { ListArgonauteComponent } from './argonaute/list-argonaute/list-argonaute.component';
@@ -38,7 +36,6 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     ArgonauteModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(BaseDeDonneService, { dataEncapsulation: false}),
     AppRoutingModule
   ],
   providers: [],
@@ -46,6 +43,4 @@ import { LoginComponent } from './login/login.component';
 })
 export class AppModule { }
 
-/*
-
- app.module.ts est le module racine de tout le projet*/
+/* app.module.ts est le module racine de tout le projet*/
